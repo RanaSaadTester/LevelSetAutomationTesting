@@ -1,7 +1,5 @@
 import org.example.DocumentPage;
-import org.example.Home;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -15,6 +13,7 @@ public class DocPricePageTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://app.levelset.com/wizard/SelectDocument/");
+        driver.manage().window().maximize();
         doc = new DocumentPage(driver);
         doc.setupDocumentPage(30, 60);
     }
